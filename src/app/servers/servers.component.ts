@@ -9,6 +9,7 @@ export class ServersComponent implements OnInit {
 
   allowNewServer: boolean = false;
   serverStartupText: string = "there is any servers yet";
+  isButtonClicked: boolean = false;
 
   constructor() { 
     setTimeout(() => {
@@ -20,6 +21,7 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer = () => {
+    this.isButtonClicked = true;
     this.serverStartupText = "now we created a server"
   }
 

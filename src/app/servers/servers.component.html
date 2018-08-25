@@ -15,9 +15,18 @@
     </div>
 </div>
 
-<p>{{ serverStartupText }}</p>
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+        <label>Server Name
+            <input type="text"
+                    [(ngModel)]="serverStartupText"
+                    placeholder="server name">
+        </label>
+        </div>
+    </div>
+</div>
 
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
+<p *ngIf="isButtonClicked">{{ serverStartupText }}</p>
+
 
