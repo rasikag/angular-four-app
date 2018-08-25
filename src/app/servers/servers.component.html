@@ -1,4 +1,21 @@
-<button class="button" [disabled]="allowNewServer">Add Server</button>
+<button 
+    class="button" 
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">Add Server</button>
+
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+        <label>Server Name
+            <input type="text"
+                    (input)="onServerNameChange($event)"
+                    placeholder="server name">
+        </label>
+        </div>
+    </div>
+</div>
+
+<p>{{ serverStartupText }}</p>
 
 <app-server></app-server>
 <app-server></app-server>
