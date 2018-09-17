@@ -8,6 +8,7 @@ import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { DirectivesDeepComponent } from './directives-deep/directives-deep.component';
+import { BasicHighlightDirective } from './basic-directive/basci-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DirectivesDeepComponent } from './directives-deep/directives-deep.compo
     CockpitComponent,
     ServerElementComponent,
     LifecycleComponent,
-    DirectivesDeepComponent
+    DirectivesDeepComponent,
+    BasicHighlightDirective
   ],
   imports: [
     BrowserModule,
