@@ -1,9 +1,12 @@
-import { Directive, ElementRef, OnInit, Renderer2, HostListener } from "@angular/core";
+import { Directive, ElementRef, OnInit, Renderer2, HostListener, HostBinding } from "@angular/core";
 
 @Directive({
     selector: '[appHighlight]'
 })
 export class BasicHighlightDirective implements OnInit {
+
+    @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent' ;
+
     constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
     ngOnInit() {
@@ -12,10 +15,12 @@ export class BasicHighlightDirective implements OnInit {
     }
 
     @HostListener('mouseenter') mouseover(eventData: Event) {
-        this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'blue');
+        // this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'blue');
+        this.backgroundColor = 'yellow';
     }
 
     @HostListener('mouseleave') mouseleave(eventData: Event) {
-        this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'transparent');
+        // this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'transparent');
+        this.backgroundColor = 'transparent';
     }
 }
